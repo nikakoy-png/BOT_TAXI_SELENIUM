@@ -67,8 +67,10 @@ async def RegUser(id, id_tg, db):
     pswd = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd"]')
     pswd.send_keys("KYAg14lj")
     driver.find_element_by_css_selector('[class*="MuiButton-label"]').click()
+    print("successfully")
     time.sleep(5)
     try:
+        print("successfully")
         driver.get('https://art.taxi.mos.ru/drivers')
         time.sleep(5)
         driver.find_element_by_css_selector('[value*="' + str(id) + '"]').click()
@@ -77,6 +79,7 @@ async def RegUser(id, id_tg, db):
         second_name = driver.find_element_by_css_selector('[name*="user.firstName"]').get_attribute('value')
         th_name = driver.find_element_by_css_selector('[name*="user.patronymic"]').get_attribute('value')
         FIO = str(first_name) + ' ' + str(second_name) + ' ' + str(th_name)
+        print("successfully")
         db.register_new_user(FIO, id, id_tg)
         driver.close()
     except:
