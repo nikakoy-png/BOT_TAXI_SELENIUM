@@ -16,7 +16,7 @@ from db import *
 from bs4 import BeautifulSoup
 import glob, os
 
-os.chdir("/root/BOT_TAXI_SELENIUM---")
+os.chdir("/root/BOT_TAXI_SELENIUM_2")
 
 db = DB('mongodb://localhost:27017')
 bot = Bot(token=KEY)
