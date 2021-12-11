@@ -18,12 +18,12 @@ import urllib.request
 async def getTeh(user, id_user):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("prefs", {
-      "download.default_directory": r"/root/BOT_TAXI_SELENIUM_4",
+      "download.default_directory": r"/root/BOT_TAXI_SELENIUM_0000",
       "download.prompt_for_download": False,
       "download.directory_upgrade": True,
       "plugins.always_open_pdf_externally": True
     })
-    driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver', chrome_options=options)
+    driver = webdriver.Chrome(chrome_options=options)
     driver.get('https://art.taxi.mos.ru')
     time.sleep(5)
     login = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input"]')
@@ -93,7 +93,7 @@ async def RegUser(id, id_tg, db):
         return 0
 
 async def getMed(user, id_user):
-    driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver')
+    driver = webdriver.Chrome()
     driver.get('https://art.taxi.mos.ru')
     time.sleep(5)
     login = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input"]')
@@ -138,7 +138,7 @@ async def getMed_step_2(user, driver, id_user):
         return 0
 
 async def getAfterTeh(user, id_user):
-    driver = webdriver.Chrome(executable_path=r'/usr/bin/chromedriver')
+    driver = webdriver.Chrome()
     driver.get('https://art.taxi.mos.ru')
     time.sleep(5)
     login = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input"]')
@@ -172,7 +172,7 @@ async def getAfterMed(user, id_user):
         "download.directory_upgrade": True,
         "plugins.always_open_pdf_externally": True
     })
-    driver = webdriver.Chrome(r'/usr/bin/chromedriver',chrome_options=options)
+    driver = webdriver.Chrome(chrome_options=options)
     driver.get('https://art.taxi.mos.ru')
     time.sleep(5)
     login = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input"]')
