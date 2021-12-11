@@ -16,7 +16,7 @@ from db import *
 from bs4 import BeautifulSoup
 import glob, os
 
-os.chdir(r"/root/BOT_TAXI_SELENIUM_3/")
+os.chdir(r"/root/BOT_TAXI_SELENIUM_4/")
 
 db = DB('mongodb://localhost:27017')
 bot = Bot(token=KEY)
@@ -54,10 +54,10 @@ async def ERROR_(message):
 
 async def send_file(id_user, file):
     await bot.send_message(id_user, 'минуточку...\n', reply_markup=menu)
-    uis_pdf = open(r'/root/BOT_TAXI_SELENIUM_3/' + str(file), 'rb')
+    uis_pdf = open(r'/root/BOT_TAXI_SELENIUM_4/' + str(file), 'rb')
     await bot.send_document(id_user, uis_pdf)
     uis_pdf.close()
-    os.remove(r'/root/BOT_TAXI_SELENIUM_3/' + str(file))
+    os.remove(r'/root/BOT_TAXI_SELENIUM_4/' + str(file))
 
 
 @dp.message_handler(content_types=['text'])
