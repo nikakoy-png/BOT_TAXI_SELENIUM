@@ -58,7 +58,7 @@ async def getTeh(user, id_user):
     await send_file(id_user, file_)
 
 async def RegUser(id, id_tg, db):
-    chrome_options = webdriver.ChromeOptions()
+    chrome_options = webdriver.ChromeOptions("/root/BOT_TAXI_SELENIUM_00000/chromedriver")
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--window-size=1420,1080')
     chrome_options.add_argument('--headless')
