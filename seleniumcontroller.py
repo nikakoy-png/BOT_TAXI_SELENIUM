@@ -58,7 +58,7 @@ async def getTeh(user, id_user):
     await send_file(id_user, file_)
 
 async def RegUser(id, id_tg, db):
-    driver = webdriver.Chrome(executable_path="usr\bin\chromedriver")
+    driver = webdriver.Chrome(executable_path="usr//bin//chromedriver")
     driver.get('https://art.taxi.mos.ru')
     time.sleep(5)
     login = driver.find_element_by_css_selector('[class*="MuiInputBase-input MuiOutlinedInput-input"]')
