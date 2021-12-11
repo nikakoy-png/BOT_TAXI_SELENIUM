@@ -16,7 +16,7 @@ from db import *
 from bs4 import BeautifulSoup
 import glob, os
 
-os.chdir("/root/BOT_TAXI_SELENIUM-")
+os.chdir("/root/BOT_TAXI_SELENIUM_")
 
 db = DB('mongodb://localhost:27017')
 bot = Bot(token=KEY)
@@ -54,15 +54,15 @@ async def ERROR_(message):
 
 async def send_file(id_user, file):
     await bot.send_message(id_user, 'минуточку...\n', reply_markup=menu)
-    uis_pdf = open('/root/BOT_TAXI_SELENIUM-/' + str(file), 'rb')
+    uis_pdf = open('/root/BOT_TAXI_SELENIUM_/' + str(file), 'rb')
     await bot.send_document(id_user, uis_pdf)
     uis_pdf.close()
-    os.remove('/root/BOT_TAXI_SELENIUM-/' + str(file))
+    os.remove('/root/BOT_TAXI_SELENIUM_/' + str(file))
 
 
 @dp.message_handler(content_types=['text'])
 async def get_text_massage(message: types.Message):
-    if isInt(message.text) and db.get_user(message.from_user.id)==[]:
+    if isInt(message.text):
         id = str(message.text)
         await RegUser(id, message.from_user.id, db,)
         await bot.send_message(message.from_user.id, 'Вы были успешно зарегистрированы в базе\n', reply_markup=menu)
