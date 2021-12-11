@@ -18,7 +18,7 @@ import urllib.request
 async def getTeh(user, id_user):
     options = webdriver.ChromeOptions()
     options.add_experimental_option("prefs", {
-      "download.default_directory": r"/root/BOT_TAXI_SELENIUM_",
+      "download.default_directory": r"/root/BOT_TAXI_SELENIUM__",
       "download.prompt_for_download": False,
       "download.directory_upgrade": True,
       "plugins.always_open_pdf_externally": True
